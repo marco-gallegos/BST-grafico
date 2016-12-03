@@ -1,6 +1,6 @@
-# arbol binario python y pygame
+# Arbol Binario de Busqueda python y pygame
 
-dependencia :
+### Dependencia :
 
 python3
 python3-pip
