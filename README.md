@@ -1,7 +1,17 @@
-# Arbol Binario de Busqueda python y pygame
+# Arbol Binario de Busqueda en python 3 y pygame
 
-### Dependencia :
+### Dependencias :
 
-python3
-python3-pip
+###### Ubuntu / Debian
+```
+apt install python3
+apt install python3-pip
 pip3 install pygame
+```
+
+###### Manjaro / Arch
+
+```
+sudo pacman -S python-pip
+pip install pygame
+```
