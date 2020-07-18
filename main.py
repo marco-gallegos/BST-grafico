@@ -17,7 +17,7 @@ pygame.init()
 FPS = 30
 fpsClock = pygame.time.Clock()
 
-ventana = pygame.display.set_mode((900,700),0,32)
+ventana = pygame.display.set_mode((900,800),0,32)
 
 pygame.display.set_caption("Simulador inorden sobre un Arbol Binario de Busqueda")
 
@@ -131,7 +131,7 @@ while True :
 	pintarnodo(abb.raiz, posx, posy)
 	pygame.display.update()
 
-	opc = int(input("numero a buscar"))
+	opc = int(input("numero a buscar : "))
 
 	buscar(abb, opc, posx, posy )
 
