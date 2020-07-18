@@ -1,4 +1,5 @@
 class Nodo(object) :
+
 	def __init__(self, dato = None ) :
 		self.dato = dato
 		self.izq = None
@@ -6,7 +7,10 @@ class Nodo(object) :
 
 class BST(object) :
 	def __init__(self, dato = None) :
-		self.raiz = Nodo(dato)
+		if dato is None :
+			self.raiz = None
+		else:
+			self.raiz = Nodo(dato)
 
 	def is_leaf(self, nodo) :
 		if nodo.izq == None and nodo.izq == None :
@@ -16,7 +20,7 @@ class BST(object) :
 	def push(self, a_insertar) :
 		if self.raiz == None :
 			self.raiz = Nodo(a_insertar)
-			print("raiz"+str(a_insertar) )
+			print("raiz "+str(a_insertar) )
 			return
 
 		iterador = self.raiz
@@ -60,7 +64,15 @@ class BST(object) :
 
 	def delete(self, a_eliminar) :
 		iterador = self.raiz
+		iterador_ant = None
+		auxiliar = None
+		if a_eliminar is self.raiz.dato and is_leaf(self.raiz) :
+			del self.raiz
+			self.raiz = None
+			return
+
 		while a_eliminar != iterador.dato :
+			iterador_ant = iterador
 			if iterador.dato < a_eliminar and iterador.izq != None :
 				iterador = iterador.izq
 			if iterador.dato > a_eliminar and iterador.der != None :
@@ -68,3 +80,37 @@ class BST(object) :
 			if a_eliminar != iterador.dato and iterador.der == None and iterador.izq == None :
 				print("no existe")
 				return
+		if is_leaf(iterador) :
+			if iterador_ant.der is iterador :
+				del iterador
+				iterador_ant.der = None
+			elif iterador_ant.izq is iterador :
+				del iterador
+				iterador_ant.izq = None
+		else :
+			pass
+
+if __name__ == '__main__':
+	
+	abb = BST();
+	solicitud = "1) insertar 2) eliminar 3) iterar 4) recorridos 5) salir\t: "
+	val_solicitud = 0
+	val_insert = None
+	val_del = None
+
+	while val_solicitud != 5 :
+		val_solicitud = int(input(solicitud))
+		if val_solicitud is 1:
+			val_insert = int(input("dame un numero\t: "))
+			abb.push(val_insert)
+		elif val_solicitud is 2 :
+			val_del = int(input("dame un numero a eliminar"))
+			abb.delete(val_del)
+		elif val_solicitud is 3 :
+			abb.iterar()
+		elif val_solicitud is 4 :
+			pass
+		elif val_solicitud is 5 :
+			print("bye")
+		else :
+			print("opcion invalida")

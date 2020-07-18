@@ -12,6 +12,6 @@ pip3 install pygame
 ###### Manjaro / Arch
 
 ```
-sudo pacman -S python-pip
+pacman -S python-pip
 pip install pygame
 ```
