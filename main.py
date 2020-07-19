@@ -1,3 +1,9 @@
+"""
+@Author Marco A. Gallegos
+@Date 2015/00/00 Tiempos de Universidad :"D
+@Description
+	arbol binario en grafico con pygame, debe mostrar el recorrido de la busqueda de un numero
+"""
 import pygame, sys
 from pygame.locals import *
 from random import *
